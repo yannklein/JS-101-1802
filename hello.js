@@ -11,71 +11,111 @@
 // To run a file, run in the console: node hello.js
 
 // 3. How to print?
-// console.log("hello");
+console.log("Hi #1802!");
+
+
+
+
+
+
 
 // var, const, let and the lower camel case
 // Note: use backticks (`) for interpolation
-const aGreatStudent = "Guillermo";
-let age = 24;
+
+const aStudent = "Allan";
+let age = 21
 
 // CONST CANNOT be reassigned
-// aGreatStudent = "Super Guillermo";
+// aStudent = "Super Allan"; NOT ALLOWED
 
 // LET CAN be reassigned
 age += 1;
-console.log(aGreatStudent, age);
-// interploation
-console.log(`I am ${aGreatStudent} ${age} years-old`);
+console.log(age);
+
+console.log(`${aStudent} is ${age} years-old.`);
+
 
 // no float/integer
-console.log(typeof(42));
-console.log(typeof(3.14));
+console.log(typeof(22));
+console.log(typeof(22.9875235));
 
 // how toString/parseInt works
 // Note: toString doesn’t work without ()
-// .to_i 
-console.log("42");
-console.log(parseInt("42"));
-console.log(parseInt("42", 10));
-// .to_s
-console.log((42).toString());
+// in ruby: .to_i .to_s
+
+// Convert a number into a string
+console.log(22);
+console.log((22).toString());
+
+// Convert a string into a number
+console.log(parseInt("21", 10));
+
+// base 10       base 2 (binary)
+// 0             0
+// 1             1
+// 2             10
+// 3             11
+// 4             100
+// 5             101
+
+console.log(parseInt("101", 10));
+console.log(parseInt("101", 2));
 
 // delete element in an array with splice
-const students = ['Michael', 'Mario', 'Rina', 'Mao'];
-// students.splice(3,1); //=> [ 'Michael', 'Mario', 'Rina' ]
-students.splice(2,2); //=> [ 'Michael', 'Mario' ]
+const students = ['Julian', 'Cindy', 'Minami', 'Stamati'];
+
+// students.splice(1,2);
+students.splice(1,1);
 console.log(students);
+
+// [1,2,3].join()
+// ---> '1,2,3'
+// [1,2,3].join("")
+// ---> '123'
 
 // object, the magic dot!
 const student = {
-  firstName: "Julien",
-  lastName: "Lesueur" 
+  firstName: "Ben",
+  lastName: "Pearson"
 };
 
 console.log(student["firstName"]);
 console.log(student.firstName);
 
+student.firstName = "Super Ben";
+console.log(student);
+
+
 // ===
 // sameness in JS: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness
 
+// > 3 == "3"
+// true
+// > 3 === "3"
+// false
+
 // the JS falsies:
-null // same as Ruby nil
-false // same as Ruby false
-undefined
-0
-NaN
+if (1) {
+  console.log("This is truthy");
+} else {
+  console.log("This is falsy");
+}
+
+null // nil
+false //false
+0 
 ""
+undefined
+NaN
 
-// [1,2,3].join()
-// ---> '1,2,3'
 
-// JS arrow functions () => {}
+// JS arrow functions () => {} 
 // Note: they look like a 'very special' variable
-const addition = (aNumber, anotherNumber) => {
-  return aNumber + anotherNumber;
-};
+// const square = (num) => {
+//   return num * num;
+// };
 
 // one liner version
-// const addition = (aNumber, anotherNumber) => aNumber + anotherNumber;
+const square = num => num * num;
 
-console.log(addition(3,5));
+console.log(square(32));
